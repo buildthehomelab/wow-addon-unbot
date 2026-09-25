@@ -13,9 +13,11 @@ This plugin has been completely localized from Chinese to English, including:
 
 ## Installation
 
-1. Place the `UnBot` folder in your `Interface/AddOns/` directory
+1. Copy the `UnBot` folder into your `Interface/AddOns/` directory
 2. Restart World of Warcraft
 3. Enable the addon in your addon list
+
+UnBot is self-contained: it needs no other addons or libraries.
 
 ## Features
 
@@ -67,15 +69,16 @@ The plugin provides access to 90 different bot commands organized in categories:
 
 If you encounter display issues with garbled characters ("?" or overlapping text), ensure you have the English client selected. All Chinese characters have been completely removed from the plugin.
 
-## Contributing
+## Credits
 
-This plugin is a localized version of the original UnBot addon. All Chinese text has been professionally translated to provide a seamless English experience for WoW players.
+UnBot was originally written by GPD. This repo is based on the English localization in [dmk69/unbot-addon](https://github.com/dmk69/unbot-addon).
 
 ## Version History
 
+- **Unreleased**: Removed the YssBossLoot dependency; item info lookups now live in `UnBot/ItemQuery.lua`
 - **v0.4**: Complete English localization implementation
 - **Previous versions**: Chinese-only interface
 
----
+## License
 
-*Note: UnBot is self-contained and needs no other addons or libraries.*
+Changes made in this repo are released under the [MIT License](LICENSE). The original UnBot code and the dmk69/unbot-addon localization were published without a license, so their authors keep their rights to that code.
