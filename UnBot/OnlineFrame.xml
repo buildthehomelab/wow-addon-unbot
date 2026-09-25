@@ -129,8 +129,6 @@
     </Layers>
 	<Scripts>
 		<OnLoad>
-			self.scrollFrame = nil;
-			self.slider = nil;
 			self.child = nil;
 			self.options = {};
 		</OnLoad>
@@ -246,7 +244,8 @@
 					OnlineFrame.slider = self;
 				</OnLoad>
 				<OnValueChanged>
-					OnlineFrame.scrollFrame:SetVerticalScroll(self:GetValue());
+					-- This fires while the slider loads, before OnlineFrame.scrollFrame is set, so scroll the parent (OnlineFrameListBox) directly
+					self:GetParent():SetVerticalScroll(self:GetValue());
 				</OnValueChanged>
 			</Scripts>
           </Slider>
