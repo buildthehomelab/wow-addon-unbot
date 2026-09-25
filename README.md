@@ -78,4 +78,4 @@ This plugin is a localized version of the original UnBot addon. All Chinese text
 
 ---
 
-*Note: UnBot no longer depends on YssBossLoot. The bundled YssBossLoot folder needs libraries that ship only with BigFoot (Ace3, LibBabble, LibInstanceLootData-1.0) and will not load on its own.*
+*Note: UnBot is self-contained and needs no other addons or libraries.*

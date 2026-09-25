@@ -4,9 +4,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## 项目概述
 
-这是一个魔兽世界3.3.5a版本的插件项目，包含两个主要插件：
+这是一个魔兽世界3.3.5a版本的插件项目：
 - **UnBot**: 机器人控制器插件，用于控制UnWOW服务器的机器人
-- **YssBossLoot**: 副本掉落查询插件，显示副本中首领和小怪的掉落物品
 
 ## 插件架构
 
@@ -20,20 +19,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `UnBotBags.lua` - 机器人背包管理
 - `Tooltips.lua` - 工具提示
 - `ImplantInspectFrame.lua` - 装备检查界面
+- `ItemQuery.lua` - 向服务器查询未缓存的物品信息
 - `StrategyTips.lua` - 战术提示
 - `Bindings.xml` - 快捷键绑定
 - XML文件 - 界面布局定义
-
-### YssBossLoot插件结构
-- `Core.lua` - 核心功能框架
-- `Data/BossData.lua` - 首领数据
-- `Filters/` - 过滤器模块（职业、装备位置、物品类型、属性）
-- `Localization/` - 多语言支持（enUS, zhCN, zhTW, bonus）
-- `widgets/LootWidget.lua` - 战利品显示组件
-- `Tooltip.lua` - 工具提示
-- `ItemQuery.lua` - 物品查询
-- `Options.lua` - 选项界面
-- `LDBplugin.lua` - 数据代理插件
 
 ## 本地化工作
 
@@ -46,13 +35,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ### 本地化策略
 - 将硬编码的中文字符串提取到本地化文件中
-- 使用现有的英文本地化文件(enUS.lua)作为基础
 - 确保所有用户界面元素都支持英文显示
 
 ## 开发注意事项
 
 - 插件专为魔兽世界3.3.5a版本设计
 - 使用Lua语言编写，基于魔兽世界API
-- UnBot不再依赖YssBossLoot（物品信息查询已移至UnBot/ItemQuery.lua）；YssBossLoot缺少大脚自带的库（Ace3、LibBabble、LibInstanceLootData-1.0），无法单独加载
+- 不依赖任何其他插件或库（原先依赖的YssBossLoot已移除，物品信息查询改由UnBot/ItemQuery.lua实现）
 - 所有文本内容应使用中文注释（根据用户全局设置）
 - 提交代码到Git前需要经过用户确认
