@@ -75,9 +75,7 @@ UnBot was originally written by GPD. This repo is based on the English localizat
 
 ## Version History
 
-- **v0.4.1**: Removed the YssBossLoot dependency (item info lookups now live in `UnBot/ItemQuery.lua`); fixed the Online and Strategy list sliders erroring on load; per-commit versioning
-- **v0.4**: Complete English localization implementation
-- **Previous versions**: Chinese-only interface
+See [CHANGELOG.md](CHANGELOG.md).
 
 The version is the `## Version:` line in `UnBot/UnBot.toc`. A pre-commit hook bumps the patch number on every commit (0.4.1, 0.4.2, ...). Enable it once after cloning:
 
@@ -86,6 +84,8 @@ git config core.hooksPath .githooks
 ```
 
 For a bigger release, edit the TOC by hand (for example to `0.5.0`); the next commit becomes `0.5.1`. Use `git commit --no-verify` to commit without a bump.
+
+A post-commit hook adds each commit's subject to CHANGELOG.md under its version and amends the changelog into that commit, so write subjects that read well there. Rebases, cherry-picks and merges are left out.
 
 ## License
 

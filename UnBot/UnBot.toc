@@ -5,7 +5,7 @@
 ## Notes: UnWOW Bot Controller (supports random and account bots from UnWOW, with basic NPC bot support. Only for 3.3.5a level 80 version)
 ## Notes-zhCN: UnWOW Bot Controller(supports random and account bots from UnWOW, with basic NPC bot support. Only for 3.3.5a level 80 version)
 ## Notes-zhTW: UnWOW Bot Controller(supports random and account bots from UnWOW, with basic NPC bot support. Only for 3.3.5a level 80 version)
-## Version: 0.4.1
+## Version: 0.4.2
 ## Author: GPD
 ## SavedVariables: UnBotCommandBarConfig, UnBotLogInfo
 Bindings.lua
