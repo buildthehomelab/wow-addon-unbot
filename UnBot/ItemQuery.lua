@@ -1,7 +1,8 @@
--- 向服务器查询尚未缓存的物品信息
--- 查询结果由调用方通过needQuery标记在下次刷新时重新调用GetItemInfo获取
+-- Queries the server for items that are not in the client's item cache yet.
+-- Callers mark such items with needQuery and call GetItemInfo again on their next refresh to pick up the result.
 
--- 每次只查询一个物品，等待服务器返回或超时后再查询下一个，避免短时间内大量查询导致掉线
+-- Items are queried one at a time, waiting for the server to answer or time out before the next,
+-- because a burst of queries can get the client disconnected.
 local QUERY_TIMEOUT = 7;
 
 local queryList = {};
@@ -20,7 +21,7 @@ local function QueryNextItem()
 	timerGroup:Stop();
 	while (#queryList > 0) do
 		queryItem = table.remove(queryList, 1);
-		-- 已缓存的物品直接跳过
+		-- Skip items that are already cached
 		if (GetItemInfo(queryItem) == nil) then
 			scanner:SetHyperlink("item:"..queryItem);
 			timerGroup:Play();
@@ -30,7 +31,7 @@ local function QueryNextItem()
 	queryItem = nil;
 end
 
--- 服务器返回物品信息或超时后，继续查询下一个
+-- Move on to the next item once the server answers or the query times out
 scanner:SetScript("OnTooltipSetItem", function()
 	if (queryItem ~= nil and GetItemInfo(queryItem) ~= nil) then
 		QueryNextItem();
