@@ -22,8 +22,21 @@ function UnBotCloseAll()
 	UnBotClearAllStrategyFrame();
 	OnlineFrame:Hide();
 	NPCFrame:Hide();
+	UnBotFrame.userClosed = true;
 	UnBotFrame:Hide();
 	DisplayInfomation("Bot action bar closed. Type /unbot in chat to reopen it.");
+end
+
+-- Bots join your party when added, so the bar is only needed while grouped
+function UnBotUpdateVisibility()
+	if (GetNumPartyMembers() > 0 or GetNumRaidMembers() > 0) then
+		if (not UnBotFrame.userClosed) then
+			UnBotFrame:Show();
+		end
+	elseif (UnBotFrame:IsShown()) then
+		UnBotHideAllSubFrame();
+		UnBotFrame:Hide();
+	end
 end
 
 local function AddButton(name,fromParent,temp,gi,ci)

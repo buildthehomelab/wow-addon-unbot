@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.4.3 - 2026-09-27
+- Hide the bot action bar when not in a group
+
 ## 0.4.2 - 2026-09-25
 - Add a changelog that updates with each version
 

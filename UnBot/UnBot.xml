@@ -18,6 +18,7 @@
 					if (UnBotFrame:IsShown()) then
 						UnBotCloseAll();
 					else
+						UnBotFrame.userClosed = false;
 						UnBotFrame:Show();
 					end
 				end
@@ -40,6 +41,9 @@
 				self:RegisterEvent("UPDATE_BINDINGS");
 				self:RegisterEvent("CHAT_MSG_WHISPER");
 				self:RegisterEvent("RAID_TARGET_UPDATE");
+				self:RegisterEvent("PLAYER_ENTERING_WORLD");
+				self:RegisterEvent("PARTY_MEMBERS_CHANGED");
+				self:RegisterEvent("RAID_ROSTER_UPDATE");
 			</OnLoad>
 			<OnEvent>
 				if (event == "ADDON_LOADED" and arg1 == "UnBot") then
@@ -51,6 +55,8 @@
 				elseif (event == "CHAT_MSG_WHISPER") then
 					CaseNormalWhisperMsg(arg2, arg1);
 				elseif (event == "RAID_TARGET_UPDATE") then
+				elseif (event == "PLAYER_ENTERING_WORLD" or event == "PARTY_MEMBERS_CHANGED" or event == "RAID_ROSTER_UPDATE") then
+					UnBotUpdateVisibility();
 				end
 			</OnEvent>
 			<OnUpdate>
