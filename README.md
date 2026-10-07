@@ -11,9 +11,14 @@ This plugin has been completely localized from Chinese to English, including:
 - Window titles and descriptions
 - Button labels and action descriptions
 
+## Requirements
+
+- A WoW 3.3.5a (12340) client.
+- An [AzerothCore](https://www.azerothcore.org) server running [mod-playerbots](https://github.com/liyunfan1223/mod-playerbots) (the addon sends `.playerbot` commands and party chat commands to the bots).
+
 ## Installation
 
-1. Copy the `UnBot` folder into your `Interface/AddOns/` directory
+1. Copy the `UnBot` folder into your `Interface/AddOns/` folder (the one inside your WoW client folder)
 2. Restart World of Warcraft
 3. Enable the addon in your addon list
 
@@ -69,10 +74,6 @@ The plugin provides access to 90 different bot commands organized in categories:
 
 If you encounter display issues with garbled characters ("?" or overlapping text), ensure you have the English client selected. All Chinese characters have been completely removed from the plugin.
 
-## Credits
-
-UnBot was originally written by GPD. This repo is based on the English localization in [dmk69/unbot-addon](https://github.com/dmk69/unbot-addon).
-
 ## Version History
 
 See [CHANGELOG.md](CHANGELOG.md).
@@ -86,6 +87,12 @@ git config core.hooksPath .githooks
 For a bigger release, edit the TOC by hand (for example to `0.5.0`); the next commit becomes `0.5.1`. Use `git commit --no-verify` to commit without a bump.
 
 A post-commit hook adds each commit's subject to CHANGELOG.md under its version and amends the changelog into that commit, so write subjects that read well there. Rebases, cherry-picks and merges are left out.
+
+## Credits
+
+UnBot was originally written by GPD. This repo is based on the English localization in [dmk69/unbot-addon](https://github.com/dmk69/unbot-addon).
+
+Author: [buildthehomelab](https://github.com/buildthehomelab)
 
 ## License
 
