@@ -2,15 +2,6 @@
 
 A bot control plugin modified from UnBot, designed as a companion plugin for AzerothCore bot modules to help players control bots.
 
-## 🌍 English Localization Complete!
-
-This plugin has been completely localized from Chinese to English, including:
-- All UI interface elements and tooltips
-- Command help text (89 entries)
-- Error messages and notifications
-- Window titles and descriptions
-- Button labels and action descriptions
-
 ## Requirements
 
 - A WoW 3.3.5a (12340) client.
