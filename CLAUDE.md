@@ -26,7 +26,7 @@ A World of Warcraft 3.3.5a addon, maintained as an English fork:
 
 ## Localization
 
-The English localization is complete; see `LOCALIZATION_PROGRESS.md`.
+The English localization is complete.
 
 ## Development notes
 
